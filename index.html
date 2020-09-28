@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Chat</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <script src="https://meet.jit.si/external_api.js"></script>
+    <script src="getvars.js"></script>
+</head>
+
+<body>
+    <main>
+        <div id="input">
+            <label for="name">Name:</label>
+            <input type="text" id="name"><br><br>
+            <label for="tNumber">Table number:</label>
+            <input type="text" id="tNumber"><br><br>
+            <script>
+            </script>
+            <label for="tName">Name of the tournament:</label>
+            <input type="text" id="tName"><br><br>
+            <p>Click the button to start chatting in a new tab </p>
+
+        </div>
+
+        <button onclick='startJitsi()'>Start chatting!</button>
+
+    </main>
+</body>
+
+</html>
