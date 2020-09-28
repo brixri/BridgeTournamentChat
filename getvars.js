@@ -1,48 +1,45 @@
-var Tname = 'Tournament Name';
-var tn = 'SomethingWentWrong';
-var rName = '-oOoops';
-var uName = 'Your Name Here';
-var iRound = 3;
-var maxTn = 10;
-var eW = false;
-
-
-
-function getTn() {
+function eW() {
     if (confirm("Pleaase click OK if you are sitting on EW position")) {
-        eW = true;
+        var ew = true;
+        NS = "True";
     } else {
-        txt = "You pressed Cancel!";
+        NS = "Stoj";
     }
+    console.log(NS);
 };
 
-function getEW() {
+function tableNumber() {
     var tn = prompt("Please enter your current table number.", "1");
-    return tn;
+    console.log(tn);
+    return (tn);
+};
+
+function nextRoundcheck() {
+    if (ew = true) {
+        tn = tn + rI;
+
+
+    };
+
+    if (tn > tMax) {
+        tn = tn - tMax;
+    }
+
+    console.log(tn);
 };
 
 function startJitsi() {
-    var eW = confirm("Pleaase click OK if you are sitting on EW position");
-    console.log(eW);
-    var tn = prompt("Please enter your current table number.", "1");
-    var tn = document.getElementById("tNumber").value;
-    console.log("This is the starting table number: ", tn);
-    var tn = parseInt(tn) + iRound;
-    if (tn > maxTn) {
-        var tn = tn - maxTn;
-    }
 
     console.log("This is the current table number: ", tn);
 
 
-    var Tname = document.getElementById("tName").value;
+    var Tname = "AGBC";
     console.log("This is the tournament name: " + Tname);
 
     var rName = tn + "-" + Tname;
     console.log('This is the link: ' + rName);
 
-    var uName = document.getElementById("name").value;
-    var audOnl = document.getElementById("noVideo");
+    var audOnl = true;
     const domain = 'meet.jit.si';
     const options = {
         roomName: rName,
@@ -54,25 +51,14 @@ function startJitsi() {
             enableWelcomePage: false,
             enableClosePage: true,
             disableInviteFunctions: true,
-            userInfo: {
-                displayName: uName,
-            },
+
         },
 
     };
 
-    var interfaceConfig = {
-        DEFAULT_BACKGROUND: '#474747',
-        DEFAULT_LOCAL_DISPLAY_NAME: uName,
-        DEFAULT_LOGO_URL: 'images/icon.png',
-        DEFAULT_REMOTE_DISPLAY_NAME: 'Fellow Bridge Player',
-        DEFAULT_WELCOME_PAGE_LOGO_URL: 'images/icon.png',
-        BRAND_WATERMARK_LINK: '',
-        CLOSE_PAGE_GUEST_HINT: false,
-        JITSI_WATERMARK_LINK: 'https://bridgebase.com',
-    };
+
 
     api = new JitsiMeetExternalAPI(domain, options);
-    console.log(uName);
 
-}
+
+};
