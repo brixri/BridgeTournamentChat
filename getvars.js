@@ -2,12 +2,38 @@ var Tname = 'Tournament Name';
 var tn = 'SomethingWentWrong';
 var rName = '-oOoops';
 var uName = 'Your Name Here';
+var iRound = 3;
+var maxTn = 10;
+var eW = false;
 
 
+
+function getTn() {
+    if (confirm("Pleaase click OK if you are sitting on EW position")) {
+        eW = true;
+    } else {
+        txt = "You pressed Cancel!";
+    }
+};
+
+function getEW() {
+    var tn = prompt("Please enter your current table number.", "1");
+    return tn;
+};
 
 function startJitsi() {
+    var eW = confirm("Pleaase click OK if you are sitting on EW position");
+    console.log(eW);
+    var tn = prompt("Please enter your current table number.", "1");
     var tn = document.getElementById("tNumber").value;
-    console.log("This is the table number: ", tn);
+    console.log("This is the starting table number: ", tn);
+    var tn = parseInt(tn) + iRound;
+    if (tn > maxTn) {
+        var tn = tn - maxTn;
+    }
+
+    console.log("This is the current table number: ", tn);
+
 
     var Tname = document.getElementById("tName").value;
     console.log("This is the tournament name: " + Tname);
