@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge Chat</title>
+    <title>Bridge Tournament Chat</title>
     <style>
         body {
             padding: 0;
@@ -13,26 +13,30 @@
     </style>
     <script src="https://meet.jit.si/external_api.js"></script>
     <script src="getvars.js"></script>
+
 </head>
 
 <body>
     <main>
-        <div id="input">
-            <label for="name">Name:</label>
-            <input type="text" id="name"><br><br>
-            <label for="EW">EW</label>
-            <input type="text" id="EW"><br><br>
-            <label for="tNumber">Table number:</label>
-            <input type="text" id="tNumber"><br><br>
-            <script>
-            </script>
-            <label for="tName">Name of the tournament:</label>
-            <input type="text" id="tName"><br><br>
-            <p>Click the button to start chatting in a new tab </p>
+        <script>
+            var NS = 'nece'
+            var tMax = 10;
+            var ew = false;
+            var rI = 1;
+            var tn = tableNumber(tn);
+            tnn = tn;
+            tn = parseInt(tn);
+            var ew = eW(ew);
 
-        </div>
 
-        <button onclick="startJitsi()">Start chatting!</button>
+            console.log(tn);
+            startJitsi(tn);
+        </script>
+        <button onclick="nextRoundcheck(ew, tn, rI, tMax); var rI = rI + 1; console.log(ew); 
+        if (NS === 'Stoj'){
+            console.log('Same table');}
+            else {
+            startJitsi(tn)};">Next round!</button>
 
     </main>
 </body>
